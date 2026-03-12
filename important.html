@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moving Highlight</title>
+  <link rel="stylesheet" href="important.css" />
+</head>
+<body>
+
+  <header class="toolbar">
+    <div class="doc-name">reading_notes_v2.doc</div>
+
+    <div class="tools">
+      <span class="tool-label">moving highlight</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <article class="document">
+      <h1>Attention</h1>
+
+      <p>
+        We often believe that we read text objectively, but our
+        <span class="moving-word active">attention</span>
+        is constantly guided by visual
+        <span class="moving-word">emphasis</span>.
+        Certain words become more
+        <span class="moving-word">important</span>
+        simply because they are highlighted.
+      </p>
+
+      <p>
+        In digital reading, highlight is not just decoration. It creates
+        hierarchy and tells the eye where to go first. A marked phrase begins
+        to feel more urgent, even if the meaning of the sentence has not changed.
+      </p>
+
+      <p>
+        This version turns highlighting into motion. Instead of staying fixed,
+        the highlight shifts from word to word, directing attention over time.
+      </p>
+
+      <a href="index.html" class="back">← back</a>
+    </article>
+  </main>
+
+  <script>
+    const words = document.querySelectorAll('.moving-word');
+    let current = 0;
+
+    setInterval(() => {
+      words[current].classList.remove('active');
+      current = (current + 1) % words.length;
+      words[current].classList.add('active');
+    }, 1000);
+  </script>
+
+</body>
+</html>

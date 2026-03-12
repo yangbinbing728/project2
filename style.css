@@ -1,0 +1,79 @@
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+background:#f3f3f1;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.home{
+position:relative;
+width:100vw;
+height:100vh;
+overflow:hidden;
+}
+
+/* background text */
+.text-layer{
+position:absolute;
+inset:0;
+padding:24px;
+z-index:1;
+}
+
+.text-layer p{
+margin:0 0 10px 0;
+font-size:42px;
+line-height:1.1;
+letter-spacing:-0.02em;
+color:rgba(0,0,0,0.05);
+}
+
+/* highlighted words */
+.mark{
+background:#e7de57;
+padding:3px 8px;
+text-decoration:none;
+color:black;
+}
+
+.mark:hover{
+background:#ddd33f;
+}
+
+/* title layer */
+.title-wrap{
+position:absolute;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:3;
+pointer-events:none;
+}
+
+/* main title */
+.title{
+font-size:120px;
+letter-spacing:-3px;
+line-height:0.9;
+margin:0;
+background:#f3f3f1;
+padding:10px 24px;
+pointer-events:auto;
+user-select:text;
+}
+
+/* highlight when selecting title */
+
+.title::selection{
+background:#e7de57;
+color:black;
+}
+
+.title::-moz-selection{
+background:#e7de57;
+color:black;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attention Document</title>
+  <link rel="stylesheet" href="attention.css" />
+</head>
+
+<body>
+
+<header class="toolbar">
+
+  <div class="doc-name">reading_notes.doc</div>
+
+  <div class="tools">
+    <span class="tool-label">highlight</span>
+
+    <button class="swatch yellow" onclick="setColor('#e7de57')"></button>
+    <button class="swatch green" onclick="setColor('#b8df72')"></button>
+    <button class="swatch pink" onclick="setColor('#efb8d8')"></button>
+
+    <button onclick="highlightText()">highlight</button>
+  </div>
+
+</header>
+
+<main class="page">
+  <article class="document">
+
+    <h1>Attention</h1>
+
+    <p>
+      We often believe that we read text objectively, but our
+      <mark>attention</mark> is constantly guided by visual
+      <mark>emphasis</mark>. Certain words become more
+      <mark>important</mark> simply because they are highlighted.
+    </p>
+
+    <p>
+      In digital reading, highlight is not just decoration. It creates
+      hierarchy and tells the eye where to go first. A marked phrase begins
+      to feel more urgent, even if the meaning of the sentence has not changed.
+    </p>
+
+    <p>
+      This page treats highlighting as a reading tool. It asks how visual
+      emphasis shapes memory, interpretation, and focus.
+    </p>
+
+    <a href="index.html" class="back">← back</a>
+
+  </article>
+</main>
+
+<script>
+function setColor(color) {
+  document.documentElement.style.setProperty('--highlight-color', color);
+}
+
+function highlightText() {
+
+  const selection = window.getSelection();
+
+  if (!selection.rangeCount) return;
+
+  const range = selection.getRangeAt(0);
+
+  const mark = document.createElement("mark");
+
+  mark.style.background = getComputedStyle(document.documentElement)
+  .getPropertyValue('--highlight-color') || "#e7de57";
+
+  range.surroundContents(mark);
+
+  selection.removeAllRanges();
+}
+</script>
+
+</body>
+</html>
