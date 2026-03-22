@@ -1,55 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Highlight</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Highlight Desktop</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f3f1;
+      overflow: hidden;
+      color: #111;
+    }
+
+    .menu-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 0 16px;
+      font-size: 13px;
+      z-index: 20;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .desktop {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .bg-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      font-size: 180px;
+      line-height: 0.9;
+      letter-spacing: -5px;
+      color: rgba(0, 0, 0, 0.06);
+      user-select: text;
+      text-align: center;
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    .bg-title::selection {
+      background: #e7de57;
+      color: #111;
+    }
+
+    .bg-title::-moz-selection {
+      background: #e7de57;
+      color: #111;
+    }
+
+    .icon {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #111;
+      font-size: 13px;
+      z-index: 5;
+    }
+
+    .file {
+      width: 62px;
+      height: 74px;
+      background: #fff;
+      border: 1px solid #d2d2cb;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .file::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 18px;
+      height: 18px;
+      background: #ecece7;
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+      border-top-right-radius: 6px;
+    }
+
+    .icon:hover .file {
+      background: #e7de57;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon:active .file {
+      transform: scale(0.96);
+    }
+
+    .icon span {
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.68);
+    }
+
+    .dock {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 10px 16px;
+      border-radius: 22px;
+      display: flex;
+      gap: 12px;
+      z-index: 20;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .dock-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #ddd;
+    }
+
+    .dock-icon:nth-child(1) {
+      background: #e7de57;
+    }
+
+    .dock-icon:nth-child(2) {
+      background: #d8d8ff;
+    }
+
+    .dock-icon:nth-child(3) {
+      background: #ffd8ec;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="menu-bar">
+    <span>Finder</span>
+    <span>File</span>
+    <span>Edit</span>
+    <span>View</span>
+  </div>
 
-<main class="home">
+  <div class="desktop">
+    <h1 class="bg-title">HIGHLIGHT</h1>
 
-<div class="text-layer">
+    <a href="attention.html" class="icon" style="top: 110px; left: 90px;">
+      <div class="file"></div>
+      <span>attention.doc</span>
+    </a>
 
-<p>
-We often believe that we read text objectively but our
-<a href="attention.html" class="mark">attention</a>
-is constantly guided by visual
-<a href="emphasis.html" class="mark">emphasis</a>.
-Certain words become more
-<a href="important.html" class="mark">important</a>
-simply because they are highlighted.
-</p>
+    <a href="emphasis.html" class="icon" style="top: 240px; left: 210px;">
+      <div class="file"></div>
+      <span>emphasis.doc</span>
+    </a>
 
-<p>
-Highlighting changes reading behavior and shapes interpretation.
-Visual emphasis quietly guides how information is understood.
-</p>
+    <a href="important.html" class="icon" style="top: 160px; left: 390px;">
+      <div class="file"></div>
+      <span>important.doc</span>
+    </a>\<a href="corrupted.html" class="icon" style="top: 320px; left: 540px;">
+  <div class="file"></div>
+  <span>corrupted.doc</span>
+</a>
+  </div>
 
-<p>
-We often believe that we read text objectively but our
-<a href="attention.html" class="mark">attention</a>
-is constantly guided by visual
-<a href="emphasis.html" class="mark">emphasis</a>.
-Certain words become more
-<a href="important.html" class="mark">important</a>
-simply because they are highlighted.
-</p>
-
-<p>
-Highlighting changes reading behavior and shapes interpretation.
-Visual emphasis quietly guides how information is understood.
-</p>
-
-</div>
-
-<div class="title-wrap">
-<h1 class="title">HIGHLIGHT</h1>
-</div>
-
-</main>
-
+  <div class="dock">
+    <div class="dock-icon"></div>
+    <div class="dock-icon"></div>
+    <div class="dock-icon"></div>
+  </div>
 </body>
 </html>
