@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Misaligned Highlight</title>
+  <link rel="stylesheet" href="doc.css">
+  <style>
+    .offset{
+      position:relative;
+      background:#e7de57;
+      padding:2px 6px;
+      z-index:1;
+    }
+
+    .offset::after{
+      content:"";
+      position:absolute;
+      top:4px;
+      left:6px;
+      width:100%;
+      height:100%;
+      background:#e7de57;
+      opacity:0.45;
+      z-index:-1;
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="doc-name">misaligned.doc</div>
+    <div class="tools">
+      <span class="tool-label">misaligned highlight</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <article class="document">
+      <h1>Misaligned Highlight</h1>
+
+      <p>
+        Highlight does not always sit neatly behind language.
+        <span class="offset">Attention</span>,
+        <span class="offset">emphasis</span>,
+        and <span class="offset">importance</span>
+        appear slightly out of place, as if the system failed to align them correctly.
+      </p>
+
+      <p>
+        In this version, emphasis feels unstable. The page suggests a document
+        that is still trying to organize itself but never fully settles.
+      </p>
+
+      <a href="index.html" class="back">← back</a>
+    </article>
+  </main>
+</body>
+</html>

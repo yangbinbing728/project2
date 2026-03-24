@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Isolate</title>
+  <link rel="stylesheet" href="doc.css">
+  <style>
+    .word{
+      padding:2px 6px;
+      transition:opacity 0.3s ease, background 0.3s ease;
+    }
+
+    .document:hover .word{
+      opacity:0.2;
+    }
+
+    .word:hover{
+      opacity:1 !important;
+      background:#e7de57;
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="doc-name">hover-isolate.doc</div>
+    <div class="tools">
+      <span class="tool-label">isolated highlight</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <article class="document">
+      <h1>Hover Isolate</h1>
+
+      <p>
+        In this version, the page asks the reader to choose where to focus.
+        When the cursor moves across the text, only one word can remain fully visible:
+        <span class="word">attention</span>,
+        <span class="word">emphasis</span>,
+        <span class="word">important</span>.
+      </p>
+
+      <p>
+        Highlight becomes selective. It no longer marks several ideas at once,
+        but isolates one point of focus and pushes everything else into the background.
+      </p>
+
+      <a href="index.html" class="back">← back</a>
+    </article>
+  </main>
+</body>
+</html>

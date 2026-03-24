@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Highlight</title>
+  <link rel="stylesheet" href="doc.css">
+  <style>
+    .flash{
+      background:#e7de57;
+      padding:2px 6px;
+      animation:blink 0.7s infinite;
+    }
+
+    @keyframes blink{
+      50%{ background:transparent; }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="doc-name">flash.doc</div>
+    <div class="tools">
+      <span class="tool-label">flashing highlight</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <article class="document">
+      <h1>Flashing Highlight</h1>
+
+      <p>
+        Some forms of emphasis behave less like annotation and more like notification.
+        <span class="flash">Attention</span>,
+        <span class="flash">emphasis</span>,
+        and <span class="flash">importance</span>
+        repeatedly call for the eye.
+      </p>
+
+      <p>
+        This version turns highlight into a demand. Instead of gently guiding reading,
+        it insists on being seen, creating urgency and interruption.
+      </p>
+
+      <a href="index.html" class="back">← back</a>
+    </article>
+  </main>
+</body>
+</html>

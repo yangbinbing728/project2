@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fade Highlight</title>
+<link rel="stylesheet" href="doc.css">
+<style>
+.fade{
+  background:#e7de57;
+  padding:2px 6px;
+  animation:fadeOut 3s infinite alternate;
+}
+
+@keyframes fadeOut{
+  from{ background:#e7de57;}
+  to{ background:rgba(231,222,87,0.1);}
+}
+</style>
+</head>
+
+<body>
+<header class="toolbar">
+<div class="doc-name">fade.doc</div>
+<div class="tools"><span class="tool-label">fading highlight</span></div>
+</header>
+
+<main class="page">
+<article class="document">
+<h1>Fading Highlight</h1>
+
+<p>
+Highlight can lose its strength over time.
+<span class="fade">Attention</span> fades,
+<span class="fade">emphasis</span> weakens,
+and <span class="fade">importance</span> becomes unclear.
+</p>
+
+<a href="index.html" class="back">← back</a>
+</article>
+</main>
+</body>
+</html>
