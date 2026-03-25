@@ -18,9 +18,9 @@
   <div class="tools">
     <span class="tool-label">highlight</span>
 
-    <button class="swatch yellow" onclick="setColor('#e7de57')"></button>
-    <button class="swatch green" onclick="setColor('#b8df72')"></button>
-    <button class="swatch pink" onclick="setColor('#efb8d8')"></button>
+   <button class="swatch yellow active" onclick="setColor('#e7de57', this)"></button>
+<button class="swatch green" onclick="setColor('#b8df72', this)"></button>
+<button class="swatch pink" onclick="setColor('#efb8d8', this)"></button>
 
     <button onclick="highlightText()">highlight</button>
   </div>
@@ -56,26 +56,29 @@
 </main>
 
 <script>
-function setColor(color) {
+function setColor(color, button) {
   document.documentElement.style.setProperty('--highlight-color', color);
+
+  const swatches = document.querySelectorAll('.swatch');
+  swatches.forEach(swatch => swatch.classList.remove('active'));
+
+  button.classList.add('active');
 }
 
 function highlightText() {
-
   const selection = window.getSelection();
-
   if (!selection.rangeCount) return;
 
   const range = selection.getRangeAt(0);
-
   const mark = document.createElement("mark");
 
   mark.style.background = getComputedStyle(document.documentElement)
-  .getPropertyValue('--highlight-color') || "#e7de57";
+    .getPropertyValue('--highlight-color') || "#e7de57";
 
-  range.surroundContents(mark);
-
-  selection.removeAllRanges();
+  try {
+    range.surroundContents(mark);
+    selection.removeAllRanges();
+  } catch(e) {}
 }
 </script>
 

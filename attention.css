@@ -56,7 +56,7 @@ body{
 .green{ background: #b8df72; }
 .pink{ background: #efb8d8; }
 
-/* page area */
+
 .page{
   padding-top: 110px;
   padding-bottom: 60px;
@@ -64,7 +64,6 @@ body{
   justify-content: center;
 }
 
-/* document panel */
 .document{
   width: 850px;
   background: #fcfcfa;
@@ -102,4 +101,36 @@ mark{
 mark{
 background:#e7de57;
 padding:2px 6px;
+}
+:root{
+  --highlight-color: #e7de57;
+}
+
+.swatch{
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.swatch:hover{
+  transform: scale(1.08);
+}
+
+.swatch.active{
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px #111, 0 0 0 5px rgba(0,0,0,0.08);
+}
+
+
+.yellow{ background:#e7de57; }
+.green{ background:#b8df72; }
+.pink{ background:#efb8d8; }
+
+mark{
+  background: var(--highlight-color);
+  padding: 2px 6px;
 }

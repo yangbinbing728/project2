@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="loogo2.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>split.doc</title>
+  <link rel="stylesheet" href="doc.css">
+
+  <style>
+ 
+    .split{
+      position: relative;
+      display:inline-block;
+      padding:2px 6px;
+      background:#e7de57;
+    }
+
+    .split::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:#f3f3f1;
+      clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+      pointer-events:none;
+    }
+
+    .split:hover{
+      transform: translateY(-2px);
+      transition: 0.2s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="toolbar">
+    <div class="doc-name">split.doc</div>
+
+    <div class="tools">
+      <span class="tool-label">highlight</span>
+      <button class="swatch yellow"></button>
+      <button class="swatch green"></button>
+      <button class="swatch pink"></button>
+    </div>
+  </header>
+
+
+  <main class="page">
+    <article class="document">
+
+      <h1>Split Highlight</h1>
+
+      <p>
+        We often believe that we read text objectively, but our 
+        <span class="split">attention</span> 
+        is constantly guided by visual 
+        <span class="split">emphasis</span>.
+      </p>
+
+      <p>
+        Certain words become more 
+        <span class="split">important</span> 
+        simply because they are highlighted.
+      </p>
+
+      <a href="index.html" class="back">← back</a>
+
+    </article>
+  </main>
+
+</body>
+</html>
